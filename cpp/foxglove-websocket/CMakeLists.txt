@@ -8,9 +8,6 @@ add_library(foxglove_websocket src/base64.cpp src/parameter.cpp src/serializatio
 target_include_directories(foxglove_websocket
   PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/include
-  SYSTEM
-    ${nlohmann_json_INCLUDE_DIRS}
-    ${websocketpp_INCLUDE_DIRS}
 )
 target_link_libraries(foxglove_websocket nlohmann_json::nlohmann_json websocketpp::websocketpp)
 set_target_properties(foxglove_websocket PROPERTIES CXX_STANDARD 17 CXX_STANDARD_REQUIRED ON)
