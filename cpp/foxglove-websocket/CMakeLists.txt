@@ -6,8 +6,9 @@ find_package(websocketpp REQUIRED)
 
 add_library(foxglove_websocket src/base64.cpp src/parameter.cpp src/serialization.cpp src/server_factory.cpp)
 target_include_directories(foxglove_websocket
-    PUBLIC include
-    SYSTEM
+  PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
+  SYSTEM
     ${nlohmann_json_INCLUDE_DIRS}
     ${websocketpp_INCLUDE_DIRS}
 )
